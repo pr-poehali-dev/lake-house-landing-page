@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Icon from "@/components/ui/icon";
 
-
-
 const HERO_IMG = "https://cdn.poehali.dev/projects/fc6b77df-a882-4840-921b-81df217034e3/files/ca64243a-1f3e-46d3-b1c3-222afbad4ba4.jpg";
 const INTERIOR_IMG = "https://cdn.poehali.dev/projects/fc6b77df-a882-4840-921b-81df217034e3/files/bf2fdffa-0e28-438e-9192-e20e36b4883c.jpg";
 const TERRACE_IMG = "https://cdn.poehali.dev/projects/fc6b77df-a882-4840-921b-81df217034e3/files/d4c904ba-a430-41ad-96cc-cc0c32e240b4.jpg";
@@ -53,7 +51,7 @@ export default function Index() {
   useReveal();
   const [form, setForm] = useState({ name: "", phone: "", from: "", to: "", guests: "2", agree: false });
   const [sent, setSent] = useState(false);
-  const formRef = useRef<HTMLElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
 
   const scrollToForm = () => formRef.current?.scrollIntoView({ behavior: "smooth" });
 
@@ -360,7 +358,7 @@ export default function Index() {
       </section>
 
       {/* BOOKING FORM */}
-      <section ref={formRef as unknown as React.RefObject<HTMLElement>} id="booking" className="py-24 bg-lake-deep">
+      <div ref={formRef} id="booking" className="py-24 bg-lake-deep">
         <div className="max-w-2xl mx-auto px-6">
           <div className="text-center mb-12 reveal">
             <p className="font-golos text-xs tracking-[0.3em] uppercase text-white/50 mb-3">Бронирование</p>
@@ -466,7 +464,7 @@ export default function Index() {
             </form>
           )}
         </div>
-      </section>
+      </div>
 
       {/* FOOTER */}
       <footer className="bg-[#1a3530] py-12">
