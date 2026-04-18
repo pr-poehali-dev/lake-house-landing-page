@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import Icon from "@/components/ui/icon";
 
 const HERO_IMG = "https://cdn.poehali.dev/projects/fc6b77df-a882-4840-921b-81df217034e3/files/ca64243a-1f3e-46d3-b1c3-222afbad4ba4.jpg";
@@ -55,7 +55,7 @@ export default function Index() {
 
   const scrollToForm = () => formRef.current?.scrollIntoView({ behavior: "smooth" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setSent(true);
   };
